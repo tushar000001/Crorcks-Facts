@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .fact-box {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #e0f7fa;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Earth Fact</h1>
+        <div id="fact" class="fact-box">Click the button to see a fact about Earth!</div>
+        <button id="factButton">Show Random Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Earth is the only planet in our solar system not named after a deity. Its name comes from Old English and Germanic words meaning 'ground' or 'soil.'",
+            "Earth is the only known planet to support life, thanks to its unique combination of water, atmosphere, and temperature.",
+            "Earth is the only planet where water exists in all three states: solid (ice), liquid (water), and gas (vapor).",
+            "The planet's diverse ecosystems range from deserts to rainforests, supporting a wide variety of life forms.",
+            "Earth's atmosphere is composed mainly of nitrogen and oxygen, which is crucial for sustaining life.",
+            "Earth has a magnetic field that protects it from harmful solar radiation.",
+            "The planet's surface is shaped by tectonic activity, which causes earthquakes and volcanic eruptions.",
+            "Earth orbits the Sun at an average distance of about 93 million miles (150 million kilometers), taking approximately 365.25 days to complete one orbit.",
+            "Earth's axial tilt of about 23.5 degrees is responsible for the changing seasons.",
+            "Earth has one natural satellite, the Moon, which influences tides and stabilizes the planet's axial tilt."
+        ];
+
+        document.getElementById('factButton').addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').textContent = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
